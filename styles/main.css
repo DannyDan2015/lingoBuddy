@@ -24,7 +24,8 @@ body > ng-include {
     height: 100%;
 }
 header {
-    height: 75px;
+    height: 88px;
+    border-bottom: 2px solid #269abc;
 }
 .main-logo {
     display: inline-block;
@@ -62,7 +63,7 @@ header {
     display: block !important;
 }
 .tools-menu ul {
-    margin: 80px 0 0;
+    margin: 85px 0 0;
     padding: 0;
 }
 .tools-menu li {
@@ -76,6 +77,7 @@ header {
     height: 75px;
     width: 100%;
     position: absolute;
+    margin-top: 5px;
 }
 .tools-menu .logo {
     background-position: 89% top;
