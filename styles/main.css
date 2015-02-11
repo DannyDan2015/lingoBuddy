@@ -25,7 +25,7 @@ body > ng-include {
 }
 header {
     height: 88px;
-    border-bottom: 2px solid #269abc;
+    background: #fff;
 }
 .main-logo {
     display: inline-block;
@@ -34,18 +34,23 @@ header {
     padding: 10px;
 }
 
+
+.blue-border-bot {
+    border-bottom: 2px solid #3BC5ED;
+}
+
 .tools-menu-icon {
     background: url("../images/burger.png") no-repeat right top;
     height: 45px;
     width:  55px;
     position: absolute;
-    z-index: 1;
+    z-index: 11;
 }
-.side-menu-opened .tools-menu-icon {
-    background: url("../images/burger.png") no-repeat 20% top;
+.tools-menu-icon.colored {
+    background: url("../images/burger_pink.png") no-repeat 20% top;
 }
 .tools-menu {
-    background: #4c4c4c;
+    background: #eda947;
     color: #fff;
 
     -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
@@ -55,8 +60,10 @@ header {
 
     position: absolute;
     left: 0;
-    width: 60%;
+    top: 0;
+    width: 70%;
     height: 100%;
+    z-index: 10;
 }
 .tools-menu.ng-hide {
     left: -100%;
@@ -67,18 +74,54 @@ header {
     padding: 0;
 }
 .tools-menu li {
-    padding: 15px 11%;
+    padding: 15px 12%;
     border-top: 2px solid #fff;
     text-align: right;
     font-size: 20px;
 }
 .logo{
-    background: url("../images/Untitled-1.png") no-repeat center top;
+    background: url("../images/LingoBuddySmall.png") no-repeat center top;
     height: 75px;
     width: 100%;
     position: absolute;
     margin-top: 5px;
 }
+.logo-img {
+    margin-top: 3px;
+    margin-right: 95px;
+    float: right;
+    border: 2px solid #cf4e9a;
+}
 .tools-menu .logo {
     background-position: 89% top;
+}
+.profile-short {
+    height: 75px;
+}
+.arrow {
+    background: url("../images/arrows.png") no-repeat center top;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+}
+.arrow.expand {
+    background-position: 1px top;
+    left: 50%;
+}
+.arrow.collapse {
+    background-position: right top;
+    left: 50%;
+}
+.expand-collapse {
+    text-align: center;
+    width: 100%;
+    background-color: #b5ddfd;
+    height: 20px;
+    padding-top: 5px;
+}
+.profile-expanded .expand-collapse {
+    padding-top: 2px;
+}
+.profile-long p {
+    margin: 0 0 25px;
 }

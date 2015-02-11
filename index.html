@@ -1,15 +1,16 @@
 <!doctype html>
 <html class="no-js" ng-app="lbApp">
   <head>
-    <meta charset="utf-8">
-    <title>BB monopoly</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/vendor/angular.min.js"></script>
-    <script src="scripts/vendor/angular-blocks.min.js"></script>
-    <script src="scripts/vendor/underscore.min.js"></script>
+        <meta charset="utf-8">
+        <title>BB monopoly</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles/bootstrap.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/vendor/angular.min.js"></script>
+        <script src="scripts/vendor/angular-blocks.min.js"></script>
+        <script src="scripts/vendor/underscore.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-animate.js"></script>
   </head>
   <body ng-controller="MainCtrl">
     <ng-include src="'views/main.html'">
@@ -27,5 +28,8 @@
 
     <!--Controllers-->
     <script src="scripts/controllers/main.js"></script>
+
+    <!--Directives-->
+    <script src="scripts/directives/common-directives.js"></script>
 </body>
 </html>

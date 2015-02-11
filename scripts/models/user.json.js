@@ -5,9 +5,13 @@
  */
 (function () {
     angular.module('lbApp')
-        .factory('userdModel', function () {
+        .factory('userModel', function () {
             var user = {
-
+                'name' : 'Bobby',
+                'points' : 100,
+                'reputation': 28,
+                'level' : 1,
+                'repCooldown' : 56842
             }
 
 

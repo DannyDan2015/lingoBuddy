@@ -1,10 +1,11 @@
-<header ng-class="{'side-menu-opened': !sideMenuHidden}" class="clearfix">
-    <h1 class="main-logo">LingoBuddy</h1>
+<header class="clearfix blue-border-bot" >
+    <h1 class="main-logo"></h1>
     <div class="logo"></div>
-    <div class="tools-menu-icon"
-         ng-click="sideMenuHidden = !sideMenuHidden"></div>
+    <div class="tools-menu-icon" ng-class="{'colored': sideMenuHiddenIcon}"
+         ng-click="sideMenuDelay()"></div>
+
     <div class="tools-menu" ng-hide="sideMenuHidden">
-        <div class="logo"></div>
+        <img src='images/LingoBuddySmall.png' class="logo-img" />
         <nav>
             <ul>
                 <li>
@@ -27,11 +28,33 @@
     </div>
 </header>
 <main>
-    <div class="profile-section">
-        <div>Collapsed version</div>
-        <br />
-        <div>Full version</div>
+    <div class="profile-section" ng-class="{'profile-expanded' : homeProfileExpanded}">
+        <div class="profile-short blue-border-bot" ng-show="!homeProfileExpanded">
+            <span>{{user.name}}</span>
+            <span>Points: {{user.points}}</span>
+            <span>Level: {{user.reputation + ' / ' + lbModel.repLevels[user.level]}}</span>
+            <span>Cooldown: {{user.repCooldown}}</span>
+        </div>
+        <div class="profile-long" slider>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper, nibh in scelerisque vulputate, risus leo auctor augue, commodo posuere leo mi vitae tortor. Aliquam convallis id nisi tincidunt commodo. In hac habitasse platea dictumst. Donec ac sollicitudin urna, at auctor augue. Curabitur eleifend imperdiet ipsum et tempus. Maecenas efficitur, mauris sed malesuada posuere, nisl velit viverra eros, vel dictum nulla nibh a nunc. Sed eleifend est et viverra consectetur. Donec vehicula risus ac fermentum euismod. Donec in sapien mollis, volutpat ante sed, porttitor sapien. Nunc nec libero eget mi accumsan iaculis ac quis nunc. Sed mauris turpis, porttitor sed justo sit amet, pretium mollis diam. Nam porttitor nulla id nunc blandit sollicitudin.
+
+                Proin a augue odio. Nunc odio diam, fermentum sed pulvinar nec, lacinia eu odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec facilisis mattis elit a blandit. Phasellus ex nisl, pellentesque at urna nec, sollicitudin egestas ante. Nulla sed sem feugiat, pulvinar neque ac, varius turpis. In vel ex turpis. Maecenas dapibus, sapien nec placerat viverra, turpis massa efficitur elit, ac hendrerit magna odio quis nulla. Maecenas id gravida arcu. Etiam venenatis turpis nec ipsum euismod, nec ullamcorper tortor scelerisque. Morbi rutrum, leo quis semper porttitor, elit felis fermentum enim, ac luctus purus lorem ac quam. Etiam mi odio, iaculis eu consectetur at, varius lacinia massa. Nulla malesuada iaculis ligula dignissim lacinia. Vivamus id sagittis eros. Donec posuere tincidunt diam, sed pharetra augue elementum nec. Aliquam in lacus eu tortor bibendum interdum.
+
+                Nam tincidunt maximus sollicitudin. Nunc sodales molestie lectus, porttitor dignissim nunc accumsan nec. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus at consectetur massa. Aliquam fermentum viverra tellus scelerisque mollis. Nullam in orci non urna ultricies pulvinar pulvinar consectetur mauris. Duis pulvinar sapien quis nisi luctus posuere. Phasellus elit neque, rutrum et blandit eget, viverra non ante. Nam bibendum lacus erat, ut vehicula turpis placerat vitae. Vestibulum dictum, tortor a condimentum pretium, diam nulla egestas orci, commodo lacinia tortor ipsum pulvinar tellus. Nunc id lectus nec urna sollicitudin feugiat. Ut maximus nunc in pulvinar volutpat. Aenean accumsan efficitur lorem, pharetra tincidunt neque.
+
+                Praesent eget ex erat. Morbi placerat aliquet pulvinar. Maecenas pellentesque malesuada pulvinar. Nulla finibus tempor lacus, at ultrices velit mattis sed. Vivamus in ipsum at ligula accumsan vestibulum nec at metus. Vivamus nec iaculis nulla. Etiam vestibulum blandit ultrices. Praesent placerat tristique vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id eros at erat volutpat molestie. Maecenas dictum lacinia urna a aliquet. In vitae mattis turpis.
+
+                Vestibulum laoreet lorem rhoncus ipsum mattis lobortis. Ut commodo sollicitudin nibh vitae finibus. Nunc dignissim cursus sapien, eu placerat sem placerat in. Duis rhoncus erat id tempus pharetra. Nunc nec est diam. Vestibulum posuere lacus ac ligula venenatis ullamcorper. In semper orci in posuere convallis.
+            </p>
+        </div>
+
+        <div class="expand-collapse" ng-click="expandCollapseDelay()" slider-toggle >
+            <span class="arrow" ng-class="{'expand': !homeProfileExpanded, 'collapse': homeProfileExpanded}"></span>
+        </div>
     </div>
-    <div style="height:150px; line-height:150px; text-align: center">Preferences Section</div>
-    <div style="height:150px; line-height:150px; text-align: center">Call Button</div>
+    <div class="calling-section" ng-hide="homeProfileExpanded">
+        <div style="height:150px; line-height:150px; text-align: center">Preferences Section</div>
+        <div style="height:150px; line-height:150px; text-align: center">Call Button</div>
+    </div>
 </main>
